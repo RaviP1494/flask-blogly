@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>
+    {{t.name}}
+</h1>
+<ul>
+    {% for p in t.posts %}
+        <a href="/posts/{{p.id}}">{{p.title}}</a>
+    {% endfor %}
+</ul>
+
+{% endblock %}

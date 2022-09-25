@@ -3,11 +3,18 @@
 
 <h1>New Post:</h1>
 <form action="/users/{{uid}}/posts/new" method="POST">
-    <div><label for="title">Title: </label>
-        <input name="title" type="text">
+    <div>
+        <label for="title">Title: </label>
+        <input name="title" type="text" id="title">
     </div>
     <label for="content">Content: </label>
     <textarea name="content" type="text" rows="20" columns="100"></textarea>
+    {% for t in tags %}
+    <li>
+        <input type="checkbox" name="tags" id="{{t.id}}" value="{{t.id}}">
+        <label for="{{t.id}}">{{t.name}}</label>
+    </li>
+    {% endfor %}
     <button>Post</button>
 </form>
 

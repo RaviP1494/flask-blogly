@@ -1,15 +1,21 @@
 {% extends 'base.html' %}
 {% block content %}
 <h1>
-    Edit User
+    Edit Post
 </h1>
 <form method="POST">
     <div>
         <label for="title">Title: </label>
-        <input name="title" type="text">
+        <input name="title" type="text" id="title">
     </div>
     <label for="content">Content: </label>
-    <textarea name="content" type="text" rows="20" columns="100"></textarea>
+    <textarea name="content" type="text" rows="20" columns="100" id="content"></textarea>
+    {% for t in tags %}
+    <li>
+        <input type="checkbox" name="tags" id="{{t.id}}" value="{{t.id}}">
+        <label for="{{t.id}}">{{t.name}}</label>
+    </li>
+    {% endfor %}
     <button>Update</button>
 </form>
 {% endblock %}

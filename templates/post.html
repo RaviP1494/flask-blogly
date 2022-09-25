@@ -9,10 +9,17 @@
 </h4>
 <p>
     by {{post.user.first_name}} {{post.user.last_name}}
-</p>
-<p>
     created at {{post.created_at}}
 </p>
+<span>
+    Tags:
+    {% for t in tags %}
+        <a href="/tags/{{t.id}}">{{t.name}}</a>
+    {% endfor %}
+</span>
+<form action="/users/{{post.user.id}}">
+    <button>Back</button>
+</form>
 <form action="/posts/{{post.id}}/edit">
     <button>Edit</button>
 </form>
