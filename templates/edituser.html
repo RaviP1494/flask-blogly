@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>
+    Edit User
+</h1>
+<form method="POST">
+    <label for="fname">First Name: </label>
+    <input name="fname" type="text">
+    <label for="lname">Last Name: </label>
+    <input name="lname" type="text">
+    <label for="img_url">Profile Picture URL: </label>
+    <input name="img_url" type="text">
+    <button>Update</button> 
+</form>
+{% endblock %}

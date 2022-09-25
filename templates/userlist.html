@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Users: </h1>
+<ul>
+    {% for u in ulist %}
+    <li>
+        <a href="users/{{u.id}}">{{u.first_name}} {{u.last_name}}</a>
+    </li>
+    {% endfor %}
+</ul>
+<form action="/users/new">
+    <button>Add User</button>
+</form>
+{% endblock %}
