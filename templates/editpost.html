@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>
+    Edit User
+</h1>
+<form method="POST">
+    <div>
+        <label for="title">Title: </label>
+        <input name="title" type="text">
+    </div>
+    <label for="content">Content: </label>
+    <textarea name="content" type="text" rows="20" columns="100"></textarea>
+    <button>Update</button>
+</form>
+{% endblock %}

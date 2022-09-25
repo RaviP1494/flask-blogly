@@ -1,13 +1,24 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<img src='{{u.img_url}}'>
-<h1>{{u.first_name}} {{u.last_name}}</h1>
-<form action="/users/{{u.id}}/edit">
-    <button>Edit</button>
-</form>
-<form action="/users/{{u.id}}/delete" method="POST">
-    <button>Delete</button>
-</form>
-
+<div><img src='{{u.img_url}}'>
+    <h1>{{u.first_name}} {{u.last_name}}</h1>
+    <form action="/users/{{u.id}}/edit">
+        <button>Edit</button>
+    </form>
+    <form action="/users/{{u.id}}/delete" method="POST">
+        <button>Delete</button>
+    </form>
+</div>
+<div style="border:20px">
+    <h4>Posts:</h4>
+    {% for p in posts %}
+    <li><a href="/posts/{{p.id}}">{{p.title}}</a></li>
+    {% endfor %}
+</div>
+<div>
+    <form action="/users/{{u.id}}/posts/new">
+        <button>New Post</button>
+    </form>
+</div>
 {% endblock %}

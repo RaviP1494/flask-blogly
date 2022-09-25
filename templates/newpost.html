@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>New Post:</h1>
+<form action="/users/{{uid}}/posts/new" method="POST">
+    <div><label for="title">Title: </label>
+        <input name="title" type="text">
+    </div>
+    <label for="content">Content: </label>
+    <textarea name="content" type="text" rows="20" columns="100"></textarea>
+    <button>Post</button>
+</form>
+
+{% endblock %}

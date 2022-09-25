@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{% for p in posts %}
+<li>
+    <div>
+        <h1>{{p.title}}</h1>
+        <h4>{{p.dtstamp}}</h4>
+        <p>{{p.content}}</p>
+    </div>
+</li>
+{% endfor %}
+
+{% endblock %}
